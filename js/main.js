@@ -74,7 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Update text
                 const name = btn.getAttribute('data-name');
-                currentColorName.textContent = name;
+                const material = btn.getAttribute('data-material') || '';
+                if(material) {
+                    currentColorName.innerHTML = `${name} <span class="material-text font-normal text-gray-500" style="font-weight:400; color:var(--color-body); font-size: 1rem;">- ${material}</span>`;
+                } else {
+                    currentColorName.textContent = name;
+                }
                 
                 // Update image with animation
                 const newImgSrc = btn.getAttribute('data-image');

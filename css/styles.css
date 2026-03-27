@@ -505,13 +505,8 @@ h3, h4, h5, h6, .benefit-title, .color-info h4, .pain-point p, .spec-item h4 {
 .colors-interactive-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    background: var(--color-white);
-    border-radius: 1.5rem;
-    padding: 3rem;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--color-border);
+    gap: 1.5rem;
+    align-items: stretch;
 }
 
 .colors-preview {
@@ -519,9 +514,12 @@ h3, h4, h5, h6, .benefit-title, .color-info h4, .pain-point p, .spec-item h4 {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0;
+    padding: 2.5rem;
     width: 100%;
     min-height: 500px;
+    background: var(--color-bg-gray);
+    border-radius: 1.5rem;
+    border: 1px solid var(--color-border);
 }
 
 .colors-preview .dynamic-img {
@@ -544,6 +542,7 @@ h3, h4, h5, h6, .benefit-title, .color-info h4, .pain-point p, .spec-item h4 {
 .colors-selector-panel {
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
 }
 
 .selector-title {
@@ -620,6 +619,81 @@ h3, h4, h5, h6, .benefit-title, .color-info h4, .pain-point p, .spec-item h4 {
 
 .desk-complement {
     margin-top: 2rem;
+}
+
+/* Minimalist Apple-style Colors Section */
+.apple-colors-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.apple-colors-preview {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.apple-color-options {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+
+.apple-color-options .color-btn {
+    border: none;
+    background: transparent;
+    padding: 0;
+    width: auto;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.apple-color-options .color-btn:hover {
+    transform: scale(1.1);
+}
+
+.apple-color-options .color-btn::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: var(--transition-base);
+}
+
+.apple-color-options .color-btn.active::after {
+    border-color: var(--color-accent);
+}
+
+.apple-color-options .swatch-circle {
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    display: block;
+}
+
+.apple-selected-label {
+    font-size: 1rem;
+    color: var(--color-body);
+}
+
+.apple-selected-label strong {
+    color: var(--color-title);
+    font-size: 1.25rem;
+    display: block;
+    margin-top: 0.5rem;
 }
 
 .desk-card {
