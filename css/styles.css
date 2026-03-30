@@ -962,20 +962,25 @@ h3, h4, h5, h6, .benefit-title, .color-info h4, .pain-point p, .spec-item h4 {
         display: none; /* Hide top CTA on small mobile if needed, or keep smaller */
     }
 
-    .hero-fullscreen::before {
-        display: none;
-    }
-
     .hero-fullscreen {
         background-color: var(--color-bg-gray);
+        min-height: auto;
+        padding-bottom: 2rem;
+        align-items: flex-start;
+    }
+
+    .hero-fullscreen::before {
+        display: block;
+        background-size: 100% auto;
+        background-position: top center;
     }
 
     .hero-overlay {
-        background: transparent;
+        background: linear-gradient(to bottom, rgba(248,250,252,0) 0%, rgba(248,250,252,0) 65vw, var(--color-bg-gray) 85vw, var(--color-bg-gray) 100%);
     }
 
-    .hero-section {
-        padding-top: calc(var(--nav-height) + 2rem);
+    .hero-container-text {
+        padding-top: calc(var(--nav-height) + 65vw);
     }
     
     .section-title {
