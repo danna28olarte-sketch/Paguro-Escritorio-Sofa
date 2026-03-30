@@ -876,6 +876,17 @@ h3, h4, h5, h6, .benefit-title, .color-info h4, .pain-point p, .spec-item h4 {
    ANIMATIONS & REVEAL EFFECTS
    ========================================= */
 
+.marquee {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 25s linear infinite;
+}
+
+@keyframes marquee {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+
 [class*="reveal-"] {
     opacity: 0;
     transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
@@ -949,6 +960,18 @@ h3, h4, h5, h6, .benefit-title, .color-info h4, .pain-point p, .spec-item h4 {
 @media (max-width: 768px) {
     .nav-cta {
         display: none; /* Hide top CTA on small mobile if needed, or keep smaller */
+    }
+
+    .hero-fullscreen::before {
+        display: none;
+    }
+
+    .hero-fullscreen {
+        background-color: var(--color-bg-gray);
+    }
+
+    .hero-overlay {
+        background: transparent;
     }
 
     .hero-section {

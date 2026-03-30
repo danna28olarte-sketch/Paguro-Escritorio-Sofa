@@ -42,19 +42,62 @@
                 <h1 class="hero-title">Trabaja cómodo, descansa mejor.</h1>
                 <p class="hero-subtitle" style="color: var(--color-title); font-weight: 500;">Un setup completo que
                     combina escritorio funcional y sillón reclinable para trabajar y descansar en un solo espacio.</p>
-                <div class="hero-actions mt-8">
-                    <a href="https://wa.me/573144267562?text=Hola,%20quiero%20comprar%20el%20setup%20de%20escritorio%20y%20sill%C3%B3n"
-                        class="btn btn-whatsapp btn-large shadow-large" target="_blank" rel="noopener">
+                <div class="hero-pricing mt-6" style="max-width: 480px; margin-bottom: 1.5rem;">
+                    <div style="text-decoration: line-through; color: var(--color-body); font-size: 1.125rem; font-weight: 500;">
+                        Precio Regular: $2'680.000
+                    </div>
+                    <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-top: 0.25rem;">
+                        <span style="font-size: clamp(2.5rem, 6vw, 3rem); font-weight: 800; color: #0360ab; letter-spacing: -0.03em; line-height: 1;">$2'000.000</span>
+                        <span style="font-size: 1.125rem; color: var(--color-title); font-weight: 700;">COP</span>
+                    </div>
+                    <div style="color: #10b981; font-weight: 700; font-size: 1.05rem; margin-top: 0.5rem; display: inline-flex; align-items: center; gap: 0.25rem;">
+                        <i class="ri-checkbox-circle-fill"></i> ¡Solo por hoy! Ahorras $680.000
+                    </div>
+                </div>
+
+                <div class="hero-actions mt-6">
+                    <a href="https://wa.me/573144267562?text=Hola,%20quiero%20comprar%20el%20setup%20de%20escritorio%20y%20sill%C3%B3n" class="btn btn-whatsapp btn-large shadow-large" target="_blank" rel="noopener">
                         <i class="ri-whatsapp-line"></i> Comprar por WhatsApp
                     </a>
-                    <div class="hero-trust mt-4" style="color: var(--color-body);">
-                        <span><i class="ri-truck-line"></i> Envíos a todo Colombia</span>
-                        <span><i class="ri-flashlight-line"></i> Entrega rápida</span>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- 1.5. Interactive Promo Banner -->
+    <div class="promo-banner" id="promo" style="background-color: var(--color-accent); color: white; width: 100%; position: relative; z-index: 20; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+        <div class="container" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem; padding: 1.25rem 1.5rem;">
+            
+            <div style="text-align: center; text-transform: uppercase;">
+                <div style="font-weight: 800; font-size: clamp(1.25rem, 3vw, 1.75rem); line-height: 1.1; letter-spacing: -0.02em;">EL PRECIO</div>
+                <div style="font-weight: 800; font-size: clamp(1.25rem, 3vw, 1.75rem); line-height: 1.1; letter-spacing: -0.02em;">AUMENTARÁ EN:</div>
+            </div>
+
+            <div id="countdown-timer" style="display: flex; gap: 1rem; justify-content: center; align-items: center;">
+                <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+                    <span id="timer-hours" style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; line-height: 1;">04</span>
+                    <span style="font-size: 0.85rem; font-weight: 700; text-transform: capitalize;">Horas</span>
+                </div>
+                <div style="font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 800; align-self: flex-start; margin-top: 0.2rem;">:</div>
+                <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+                    <span id="timer-minutes" style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; line-height: 1;">00</span>
+                    <span style="font-size: 0.85rem; font-weight: 700; text-transform: capitalize;">Minutos</span>
+                </div>
+                <div style="font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 800; align-self: flex-start; margin-top: 0.2rem;">:</div>
+                <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+                    <span id="timer-seconds" style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; line-height: 1;">00</span>
+                    <span style="font-size: 0.85rem; font-weight: 700; text-transform: capitalize;">Segundos</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Marquee below banner -->
+        <div style="background: linear-gradient(to bottom, #2a2a2a, #000000); padding: 0.75rem 0; overflow: hidden; white-space: nowrap; border-top: 2px solid #000; box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);">
+            <div class="marquee" style="font-weight: 800; font-size: 1.15rem; text-transform: uppercase; letter-spacing: 1px; color: var(--color-accent);">
+                ¡AHORRA $680.000 HOY! &nbsp;&bull;&nbsp; ¡AHORRA $680.000 HOY! &nbsp;&bull;&nbsp; ¡AHORRA $680.000 HOY! &nbsp;&bull;&nbsp; ¡AHORRA $680.000 HOY! &nbsp;&bull;&nbsp; ¡AHORRA $680.000 HOY! &nbsp;&bull;&nbsp; ¡AHORRA $680.000 HOY! &nbsp;&bull;&nbsp; ¡AHORRA $680.000 HOY! &nbsp;&bull;&nbsp; ¡AHORRA $680.000 HOY!
+            </div>
+        </div>
+    </div>
 
     <!-- 2. Problem -->
     <section class="problem-section py-20" id="problem">
@@ -296,9 +339,9 @@
                 <h3 style="font-size: 1.5rem; color: var(--color-title); font-weight: 600; margin-bottom: 1.5rem;">
                     Sillón reclinable + escritorio funcional</h3>
 
-                <div class="price-display mb-8">
+                <div class="price-display mb-8" style="white-space: nowrap;">
                     <span
-                        style="font-size: 3.5rem; font-weight: 800; color: #0360ab; letter-spacing: -0.03em;">$2´000.000</span>
+                        style="font-size: clamp(2.5rem, 8vw, 3.5rem); font-weight: 800; color: #0360ab; letter-spacing: -0.03em;">$2'000.000</span>
                     <span
                         style="font-size: 1.25rem; color: var(--color-body); font-weight: 500; margin-left: 0.5rem;">COP</span>
                 </div>

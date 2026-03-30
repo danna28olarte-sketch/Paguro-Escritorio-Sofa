@@ -96,4 +96,61 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // 4. Countdown Timer Logic (Local Storage / 4 hours daily)
+    const countdownTimer = () => {
+        const hoursEl = document.getElementById('timer-hours');
+        const minutesEl = document.getElementById('timer-minutes');
+        const secondsEl = document.getElementById('timer-seconds');
+        
+        if (!hoursEl || !minutesEl || !secondsEl) return;
+        
+        // 4 hours in ms
+        const FOUR_HOURS_MS = 4 * 60 * 60 * 1000;
+        
+        // Get today's start at midnight
+        const now = new Date();
+        const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
+        
+        const storageKey = 'pagureo_promo_endtime';
+        const storageDayKey = 'pagureo_promo_day';
+        
+        let endTime = localStorage.getItem(storageKey);
+        let savedDay = localStorage.getItem(storageDayKey);
+        
+        // If this is a new day or we have no saved time, reset it
+        if (!endTime || !savedDay || parseInt(savedDay) !== startOfDay) {
+            endTime = new Date().getTime() + FOUR_HOURS_MS;
+            localStorage.setItem(storageKey, endTime);
+            localStorage.setItem(storageDayKey, startOfDay);
+        } else {
+            endTime = parseInt(endTime);
+        }
+        
+        const updateTimer = () => {
+            const currentTime = new Date().getTime();
+            let distance = endTime - currentTime;
+            
+            // If timer runs out, keep it at 00:00:00
+            if (distance < 0) {
+                hoursEl.textContent = '00';
+                minutesEl.textContent = '00';
+                secondsEl.textContent = '00';
+                return;
+            }
+            
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            hoursEl.textContent = hours.toString().padStart(2, '0');
+            minutesEl.textContent = minutes.toString().padStart(2, '0');
+            secondsEl.textContent = seconds.toString().padStart(2, '0');
+        };
+        
+        updateTimer();
+        setInterval(updateTimer, 1000);
+    };
+    
+    countdownTimer();
 });
